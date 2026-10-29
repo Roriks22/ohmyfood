@@ -26,6 +26,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
+  flex-direction: column-reverse;
 }
 
 .footerLogo {
@@ -49,7 +50,7 @@
 }
 
 .footer a:hover {
-  color: #9356DC;
+  color: #9356dc;
 }
 
 .footerLink {
@@ -82,4 +83,4 @@
   .footerLogo {
     order: 2;
   }
-} 
+}
