@@ -1,23 +1,27 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMobileScreen, faList, faUtensils } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMobileScreen,
+  faList,
+  faStore,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Steps() {
   const steps = [
     {
       number: 1,
       icon: faMobileScreen,
-      text: 'Choisissez un restaurant'
+      text: "Choisissez un restaurant",
     },
     {
       number: 2,
       icon: faList,
-      text: 'Composez votre menu'
+      text: "Composez votre menu",
     },
     {
       number: 3,
-      icon: faUtensils,
-      text: 'Dégustez au restaurant'
-    }
+      icon: faStore,
+      text: "Dégustez au restaurant",
+    },
   ];
 
   return (
@@ -36,4 +40,4 @@ export default function Steps() {
       </div>
     </section>
   );
-} 
+}

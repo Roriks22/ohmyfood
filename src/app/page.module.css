@@ -49,19 +49,19 @@
 }
 
 .cta {
-  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
+  box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
   color: white;
   border: none;
   padding: 1rem 2rem;
   border-radius: 25px;
   font-weight: 500;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .cta:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.05);
+  box-shadow: 0 6px 12px rgb(0 0 0 / 25%);
 }
 
 .restaurants {
@@ -117,7 +117,7 @@
 }
 
 .footer a:hover {
-  color: #9356DC;
+  color: #9356dc;
 }
 
 @media (max-width: 1024px) {
