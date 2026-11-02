@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
 export default function MenuItem({ item, index }) {
   return (
@@ -14,4 +14,4 @@ export default function MenuItem({ item, index }) {
       </div>
     </div>
   );
-} 
+}

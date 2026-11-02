@@ -4,8 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import "./RestaurantCard.css";
 
-export default function RestaurantCard({ restaurant }) {
-  const { name, location, image, isNew, slug, id } = restaurant;
+export default function RestaurantCard({
+  id,
+  name,
+  location,
+  image,
+  isNew,
+  slug,
+}) {
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLike = () => {
@@ -14,10 +20,7 @@ export default function RestaurantCard({ restaurant }) {
 
   return (
     <article className="restaurant-card">
-      <Link
-        href={`/restaurant/${slug}`}
-        className="restaurant-card__link"
-      >
+      <Link href={`/restaurant/${slug}`} className="restaurant-card__link">
         <div className="restaurant-card__image-container">
           <img
             className="restaurant-card__image"
@@ -25,11 +28,7 @@ export default function RestaurantCard({ restaurant }) {
             alt={`Restaurant ${name}`}
           />
 
-          {isNew && (
-            <span className="restaurant-card__badge">
-              Nouveau
-            </span>
-          )}
+          {isNew && <span className="restaurant-card__badge">Nouveau</span>}
         </div>
       </Link>
 
@@ -43,9 +42,7 @@ export default function RestaurantCard({ restaurant }) {
         </Link>
 
         <button
-          className={`restaurant-card__favorite ${
-            isLiked ? "liked" : ""
-          }`}
+          className={`restaurant-card__favorite ${isLiked ? "liked" : ""}`}
           type="button"
           onClick={handleLike}
           aria-label={
@@ -85,4 +82,3 @@ export default function RestaurantCard({ restaurant }) {
     </article>
   );
 }
-

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Steps from "@/components/Steps/Steps";
-import RestaurantCard from "@/components/RestaurantCard/RestaurantCard";
+import RestaurantView from "@/components/RestaurantView/RestaurantView";
 import restaurantsData from "@/data/restaurants.json";
 
 export default function Home() {
@@ -10,12 +10,7 @@ export default function Home() {
   return (
     <>
       <div className={styles.location}>
-        <Image
-          src="/icons/location.svg"
-          alt=""
-          width={16}
-          height={16}
-        />
+        <Image src="/icons/location.svg" alt="" width={16} height={16} />
         <span>Paris, Belleville</span>
       </div>
 
@@ -24,13 +19,10 @@ export default function Home() {
           <h1>Réservez le menu qui vous convient</h1>
 
           <p>
-            Découvrez des restaurants d'exception,
-            sélectionnés par nos soins.
+            Découvrez des restaurants d'exception, sélectionnés par nos soins.
           </p>
 
-          <button className={styles.cta}>
-            Explorer nos restaurants
-          </button>
+          <button className={styles.cta}>Explorer nos restaurants</button>
         </div>
       </section>
 
@@ -42,9 +34,10 @@ export default function Home() {
 
           <div className={styles.restaurantGrid}>
             {restaurants.map((restaurant) => (
-              <RestaurantCard
+              <RestaurantView
                 key={restaurant.id}
                 restaurant={restaurant}
+                view="card"
               />
             ))}
           </div>
