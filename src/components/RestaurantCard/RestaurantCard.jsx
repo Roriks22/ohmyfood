@@ -1,9 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import "./RestaurantCard.css";
 
-export default function RestaurantCard({ id, name, location, image, isNew }) {
+export default function RestaurantCard({
+  id,
+  name,
+  location,
+  image,
+  isNew,
+  slug,
+}) {
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLike = () => {
@@ -12,21 +20,26 @@ export default function RestaurantCard({ id, name, location, image, isNew }) {
 
   return (
     <article className="restaurant-card">
-      <div className="restaurant-card__image-container">
-        <img
-          className="restaurant-card__image"
-          src={image}
-          alt={`Restaurant ${name}`}
-        />
+      <Link href={`/restaurant/${slug}`} className="restaurant-card__link">
+        <div className="restaurant-card__image-container">
+          <img
+            className="restaurant-card__image"
+            src={image}
+            alt={`Restaurant ${name}`}
+          />
 
-        {isNew && <span className="restaurant-card__badge">Nouveau</span>}
-      </div>
+          {isNew && <span className="restaurant-card__badge">Nouveau</span>}
+        </div>
+      </Link>
 
       <div className="restaurant-card__content">
-        <div className="restaurant-card__information">
+        <Link
+          href={`/restaurant/${slug}`}
+          className="restaurant-card__information"
+        >
           <h3 className="restaurant-card__title">{name}</h3>
           <p className="restaurant-card__location">{location}</p>
-        </div>
+        </Link>
 
         <button
           className={`restaurant-card__favorite ${isLiked ? "liked" : ""}`}
